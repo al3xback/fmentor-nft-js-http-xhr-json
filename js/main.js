@@ -4,7 +4,7 @@ const mainContainerEl = document.querySelector('main .container');
 const cardTemplate = document.getElementById('card-template');
 
 const URL =
-	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/2fe6a2060f84a98a71573b9b3de6df0add807677/data.json';
+	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/863715b80ad4a7d938df3e312b7b61ab2235b8e2/nft-data.json';
 
 const renderCardContent = (data) => {
 	const cardData = JSON.parse(data);
