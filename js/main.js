@@ -10,7 +10,8 @@ const renderCardContent = (data) => {
 	const { title, description, image, ethereumAmount, remainingTime, author } =
 		JSON.parse(data);
 
-	const cardEl = document.importNode(cardTemplate.content, true);
+	const cardTemplateNode = document.importNode(cardTemplate.content, true);
+	const cardEl = cardTemplateNode.querySelector('.card');
 
 	const cardImageEl = cardEl.querySelector('.card__image img');
 	cardImageEl.src = './images/' + image;
