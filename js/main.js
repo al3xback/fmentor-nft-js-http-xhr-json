@@ -1,11 +1,11 @@
 import { sendHttpRequest } from './util.js';
 
+const URL =
+	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/7bc0fc0878abceb5fdb135749ddb5d13c4b08e30/nft-data.json';
+
 const cardWrapperEl = document.querySelector('.card-wrapper');
 const cardTemplate = document.getElementById('card-template');
 const loadingEl = document.querySelector('.loading');
-
-const URL =
-	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/7bc0fc0878abceb5fdb135749ddb5d13c4b08e30/nft-data.json';
 
 const removeLoading = () => {
 	loadingEl.parentElement.removeChild(loadingEl);
