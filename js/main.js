@@ -48,7 +48,7 @@ const renderCardContent = (data) => {
 
 	const cardAuthorImageEl = cardEl.querySelector('.card__author-img');
 	cardAuthorImageEl.src = './images/' + author.image;
-	cardAuthorImageEl.alt = author.image.substring(0, image.indexOf('.'));
+	cardAuthorImageEl.alt = author.name;
 
 	const cardAuthorNameEl = cardEl.querySelector('.card__author-desc a');
 	cardAuthorNameEl.textContent = author.name;
