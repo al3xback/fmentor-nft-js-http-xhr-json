@@ -1,7 +1,7 @@
 import { sendHttpRequest } from './util.js';
 
 const URL =
-	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/7bc0fc0878abceb5fdb135749ddb5d13c4b08e30/nft-data.json';
+	'https://gist.githubusercontent.com/al3xback/8c547ab35159471bece9dceab5c3c1c6/raw/861f3656a11d16839aa27b3ac0825ace073f4e1d/nft-data.json';
 
 const cardWrapperEl = document.querySelector('.card-wrapper');
 const cardTemplate = document.getElementById('card-template');
@@ -22,8 +22,7 @@ const handleError = (msg) => {
 };
 
 const renderCardContent = (data) => {
-	const { title, description, image, ethereumAmount, remainingTime, author } =
-		JSON.parse(data);
+	const { title, description, image, status, author } = JSON.parse(data);
 
 	const cardTemplateNode = document.importNode(cardTemplate.content, true);
 	const cardEl = cardTemplateNode.querySelector('.card');
@@ -41,10 +40,10 @@ const renderCardContent = (data) => {
 	const cardStatusItemEls = cardEl.querySelectorAll('.card__stats-list-item');
 	const cardEthereumAmountEl = cardStatusItemEls[0];
 	cardEthereumAmountEl.querySelector('span').textContent =
-		ethereumAmount + ' ETH';
+		status.ethereumAmount;
 	const cardRemainingTimeEl = cardStatusItemEls[1];
 	cardRemainingTimeEl.querySelector('span').textContent =
-		remainingTime + ' days left';
+		status.remainingTime;
 
 	const cardAuthorImageEl = cardEl.querySelector('.card__author-img');
 	cardAuthorImageEl.src = './images/' + author.image;
